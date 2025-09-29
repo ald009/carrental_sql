@@ -26,19 +26,19 @@ INSERT INTO Payments (rental_id, payment_date, amount, method) VALUES
 (5, '2025-09-18', 28000.00, 'transfer'), -- Armand fizetése
 (6, '2025-09-22', 52000.00, 'cash'); -- Renátó fizetése
 
-INSERT INTO Cars (license_plate, brand, model, cw, engine, year_, daily_rate, status_, deposit_fee, contact, type_) VALUES
-('','','','','','','','','','',''),
-('','','','','','','','','','',''),
-('','','','','','','','','','',''),
-('','','','','','','','','','',''),
-('','','','','','','','','','',''),
-('','','','','','','','','','',''),
+INSERT INTO Cars (vehicle_id, license_plate, brand, model, cw, engine, year_, daily_rate, status_, deposit_fee, contact, type_) VALUES
+('1','','','','','','','','','','',''),
+('2','','','','','','','','','','',''),
+('5','','','','','','','','','','',''),
+('6','','','','','','','','','','',''),
+('7','','','','','','','','','','',''),
+('11','','','','','','','','','','',''),
 
-INSERT INTO Motorcycles (license_plate, brand, model, cw, engine, year_, daily_rate, status_, deposit_fee, contact, type_) VALUES
-('','','','','','','','','','',''),
-('','','','','','','','','','',''),
-('','','','','','','','','','',''),
-('','','','','','','','','','',''),
-('','','','','','','','','','',''),
-('','','','','','','','','','',''),
+INSERT INTO Motorcycles (vehicle_id, license_plate, brand, model, cw, engine, year_, daily_rate, status_, deposit_fee, contact, type_) VALUES
+('3','','','','','','','','','','',''),
+('4','','','','','','','','','','',''),
+('9','','','','','','','','','','',''),
+('8','','','','','','','','','','',''),
+('10','','','','','','','','','','',''),
+('12','','','','','','','','','','',''),
 
