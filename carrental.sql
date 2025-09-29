@@ -10,6 +10,12 @@ CREATE TABLE cars(
 );
 
 CREATE TABLE motorcycles(
+    bike_id INT AUTO_INCREMENT PRIMARY KEY,
+    license_plate CHAR(6),
+    brand VARCHAR(50),
+    model VARCHAR(50),
+    cw ENUM("RED","BLUE","WHITE","BLACK","GRAY","YELLOW","GREEN","SILVER","GOLD","PURPLE",),
+    engine
 
 )
 
