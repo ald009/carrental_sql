@@ -4,8 +4,12 @@ CHARACTER SET utf8mb4 --beállítja  az utf8-at
 COLLATE utf8mb4_general_ci; --beállítja az utf8 illesztését
 USE Carrental; --kiválasztja az adatbázist
 
+CREATE TABLE Vehicles(
+    vehicle_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL
+)
+
 CREATE TABLE Cars(
-    car_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, --egyedi azonosító
+    vehicle_id INT NOT NULL, --egyedi azonosító
     license_plate CHAR(6) not NULL, --rendszám
     brand VARCHAR(50) NOT NULL, --márka
     model VARCHAR(50) NOT NULL, --típus
@@ -16,11 +20,13 @@ CREATE TABLE Cars(
     status_ ENUM("avalaible", "rented", "maintenance") NOT NULL, --állapot elérhető, foglalt stb
     deposit_fee DECIMAL(10.2), --foglaló értéke
     contact VARCHAR NOT NULL(50), --elérhetőség
-    type_ ENUM("SUV", "cabrio","sedan", "coupe", "van","sport/luxury",) --autó típus
+    type_ ENUM("SUV", "cabrio","sedan", "coupe", "van","sport/luxury",), --autó típus
+    FOREIGN KEY (vehicle_id) REFERENCES Vehicles(vehicle_id)
+    
 )
 
 CREATE TABLE motorcycles(
-    bike_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, --egyedi azonosító
+    vehicle_id INT NOT NULL, --egyedi azonosító
     license_plate CHAR(6) not NULL, --rendszám
     brand VARCHAR(50) NOT NULL,  --márka
     model VARCHAR(50) NOT NULL,--típus
@@ -31,7 +37,8 @@ CREATE TABLE motorcycles(
     status_ ENUM("avalaible", "rented", "maintenance") NOT NULL, --állapot elérhető, foglalt stb
     deposit_fee DECIMAL(10.2), --foglaló értéke
     contact VARCHAR NOT NULL(50), --elérhetőség
-    type_ ENUM("enduro", "utcai","sport", "supermoto", "chopper","tour",) --motor típus
+    type_ ENUM("enduro", "utcai","sport", "supermoto", "chopper","tour",), --motor típus
+    FOREIGN KEY (vehicle_id) REFERENCES Vehicles(vehicle_id)
 )
 
 CREATE TABLE Customers (
@@ -47,12 +54,12 @@ CREATE TABLE Customers (
 CREATE TABLE Rentals (
     rental_id INT PRIMARY KEY AUTO_INCREMENT, -- Egyedi azonosító a kölcsönzéshez
     customer_id INT NOT NULL, -- Hivatkozás az ügyfélre
-    car_id INT NOT NULL, -- Hivatkozás az autóra
+    vehicle_id INT NOT NULL, -- Hivatkozás az autóra
     rental_date DATE NOT NULL, -- Kölcsönzés kezdete
     return_date DATE, -- Visszahozatal dátuma
     total_cost DECIMAL(10,2), -- Teljes költség (számított mező)
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id), --id t elkéri a costumer táblából
-    FOREIGN KEY (car_id) REFERENCES Cars(car_id), --id t elkéri az car táblából
+    FOREIGN KEY (vehicle_id) REFERENCES Vehicles(vehicle_id), --id t elkéri az car táblából
     FOREIGN KEY (bike_id) REFERENCES Motorcycles(bike_id) --id t elkéri a bike táblából
 );
 
