@@ -10,6 +10,7 @@ CREATE TABLE Cars(
 );
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 CREATE TABLE motorcycles(
     bike_id INT AUTO_INCREMENT PRIMARY KEY,
     license_plate CHAR(6),
@@ -17,6 +18,9 @@ CREATE TABLE motorcycles(
     model VARCHAR(50),
     cw ENUM("RED","BLUE","WHITE","BLACK","GRAY","YELLOW","GREEN","SILVER","GOLD","PURPLE",),
     engine
+=======
+CREATE TABLE Motorcycles(
+>>>>>>> Stashed changes
 =======
 CREATE TABLE Motorcycles(
 >>>>>>> Stashed changes
