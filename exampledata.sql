@@ -35,10 +35,7 @@ INSERT INTO Cars (vehicle_id, license_plate, brand, model, cw, engine, year_, da
 ('11','UIO890','','','','','','','','','',''),
 
 INSERT INTO Motorcycles (vehicle_id, license_plate, brand, model, cw, engine, year_, daily_rate, status_, deposit_fee, contact, type_) VALUES
-('3','PAS345','','','','','','','','','',''),
+('3','PAS345','HONDA','CBR','BLUE','1000CCM','2013','20000.00','available','10000.00','06201237889','sport'),
 ('6','DFG678','KTM','Duke','ORANGE','125ccm','2008','20000.00','available','10000.00','06201237889','utcai'),
-('9','HJK901','','','','','','','','','',''),
-('8','VBN234','','','','','','','','','',''),
-('10','MNB567','','','','','','','','','',''),
-('12','LKJ890','','','','','','','','','',''),
-
+('9','HJK901','SUZUKI','DRZ','YELLOW','500CCM','2010','20000.00','available','1000.00','06201237889','supermoto'),
+('8','VBN234','HONDA','Dio','BLUE','50CCM','1989','2000.00','available','1000.00','06201237889','utcai'),
