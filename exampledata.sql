@@ -10,7 +10,7 @@ INSERT INTO Customers (first_name, last_name, phone_number, email, driver_licens
 ('Armand', 'Lakatos', '06704208899', 'armand.lakatos@example.com', 'DL287354'), -- Armand adatai
 ('Renátó', 'Orsós', '06207893322', 'renato.orsos@example.com', 'DL987323'); -- Renátó adatai
 
-INSERT INTO Rentals (customer_id, car_id, rental_date, return_date, total_cost) VALUES
+INSERT INTO Rentals (customer_id, vehicle_id, rental_date, return_date, total_cost) VALUES
 (1, 2, '2025-09-01', '2025-09-05', 44000.00), -- Péter bérelte a Golfot
 (2, 1, '2025-09-10', '2025-09-12', 24000.00), -- Anna bérelte a Corollát
 (3, 4, '2025-09-15', '2025-09-18', 27000.00), -- Gábor bérelte a Swiftet
@@ -28,3 +28,17 @@ INSERT INTO Payments (rental_id, payment_date, amount, method) VALUES
 
 INSERT INTO Cars (license_plate, brand, model, cw, engine, year_, daily_rate, status_, deposit_fee, contact, type_) VALUES
 ('','','','','','','','','','',''),
+('','','','','','','','','','',''),
+('','','','','','','','','','',''),
+('','','','','','','','','','',''),
+('','','','','','','','','','',''),
+('','','','','','','','','','',''),
+
+INSERT INTO Motorcycles (license_plate, brand, model, cw, engine, year_, daily_rate, status_, deposit_fee, contact, type_) VALUES
+('','','','','','','','','','',''),
+('','','','','','','','','','',''),
+('','','','','','','','','','',''),
+('','','','','','','','','','',''),
+('','','','','','','','','','',''),
+('','','','','','','','','','',''),
+
