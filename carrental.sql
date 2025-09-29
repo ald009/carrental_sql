@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS Carrental;
-CREATE DATABASE IF NOT EXISTS Carrental
-CHARACTER SET utf8mb4
-COLLATE utf8mb4_general_ci;
-USE Carrental;
+DROP DATABASE IF EXISTS Carrental; --törli az adatbázist ha már van 
+CREATE DATABASE IF NOT EXISTS Carrental --elkészíti az adatbázist ha nem létezik
+CHARACTER SET utf8mb4 --beállítja  az utf8-at
+COLLATE utf8mb4_general_ci; --beállítja az utf8 illesztését
+USE Carrental; --kiválasztja az adatbázist
 
 CREATE TABLE Cars(
     car_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, --egyedi azonosító
@@ -11,12 +11,12 @@ CREATE TABLE Cars(
     model VARCHAR(50) NOT NULL, --típus
     cw ENUM("RED","BLUE","WHITE","BLACK","GRAY","YELLOW","GREEN","SILVER","GOLD","PURPLE",), --szín
     engine VARCHAR(50) NOT NULL, --motor típus
-    year_  INT NOT NULL, --gyártási év
+    year_  YEAR NOT NULL, --gyártási év
     daily_rate DECIMAL(10,2) NOT NULL, --napi bérleti díj
     status_ ENUM("avalaible", "rented", "maintenance") NOT NULL, --állapot elérhető, foglalt stb
     deposit_fee DECIMAL(10.2), --foglaló értéke
     contact VARCHAR NOT NULL(50), --elérhetőség
-    type_ ENUM("enduro", "utcai","sport", "supermoto", "enduro","chopper","tour",) --autó típus
+    type_ ENUM("SUV", "cabrio","sedan", "coupe", "van","sport/luxury",) --autó típus
 )
 
 CREATE TABLE motorcycles(
@@ -26,12 +26,12 @@ CREATE TABLE motorcycles(
     model VARCHAR(50) NOT NULL,--típus
     cw ENUM("RED","BLUE","WHITE","BLACK","GRAY","YELLOW","GREEN","SILVER","GOLD","PURPLE",),--szín
     engine VARCHAR(50) NOT NULL,--motor típus
-    year_  INT NOT NULL, --gyártási év
+    year_  YEAR NOT NULL, --gyártási év
     daily_rate DECIMAL(10,2) NOT NULL, --napi bérleti díj
     status_ ENUM("avalaible", "rented", "maintenance") NOT NULL, --állapot elérhető, foglalt stb
     deposit_fee DECIMAL(10.2), --foglaló értéke
     contact VARCHAR NOT NULL(50), --elérhetőség
-    type_ ENUM("enduro", "utcai","sport", "supermoto", "enduro","chopper","tour",) --motor típus
+    type_ ENUM("enduro", "utcai","sport", "supermoto", "chopper","tour",) --motor típus
 )
 
 CREATE TABLE Customers (
@@ -41,7 +41,7 @@ CREATE TABLE Customers (
     phone_number VARCHAR(20), -- Telefonszám
     email VARCHAR(100) UNIQUE, -- E-mail cím
     driver_license VARCHAR(50) UNIQUE NOT NULL -- Jogosítvány száma
-    last_login TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    last_login TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP --mostani id t írja ki
 );
 
 CREATE TABLE Rentals (
@@ -51,9 +51,9 @@ CREATE TABLE Rentals (
     rental_date DATE NOT NULL, -- Kölcsönzés kezdete
     return_date DATE, -- Visszahozatal dátuma
     total_cost DECIMAL(10,2), -- Teljes költség (számított mező)
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
-    FOREIGN KEY (car_id) REFERENCES Cars(car_id),
-    FOREIGN KEY (bike_id) REFERENCES Motorcycles(bike_id)
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id), --id t elkéri a costumer táblából
+    FOREIGN KEY (car_id) REFERENCES Cars(car_id), --id t elkéri az car táblából
+    FOREIGN KEY (bike_id) REFERENCES Motorcycles(bike_id) --id t elkéri a bike táblából
 );
 
 CREATE TABLE Payments (
@@ -62,5 +62,5 @@ CREATE TABLE Payments (
     payment_date DATE NOT NULL, -- Fizetés dátuma
     amount DECIMAL(10,2) NOT NULL, -- Befizetett összeg
     method ENUM('cash', 'card', 'transfer') NOT NULL, -- Fizetési mód
-    FOREIGN KEY (rental_id) REFERENCES Rentals(rental_id)
+    FOREIGN KEY (rental_id) REFERENCES Rentals(rental_id) --elkéri az id t az rental táblából
 );
