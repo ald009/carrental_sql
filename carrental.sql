@@ -9,21 +9,19 @@ CREATE TABLE Cars(
 
 );
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 CREATE TABLE motorcycles(
-    bike_id INT AUTO_INCREMENT PRIMARY KEY,
-    license_plate CHAR(6),
-    brand VARCHAR(50),
-    model VARCHAR(50),
+    bike_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    license_plate CHAR(6) not NULL,
+    brand VARCHAR(50) NOT NULL,
+    model VARCHAR(50) NOT NULL,
     cw ENUM("RED","BLUE","WHITE","BLACK","GRAY","YELLOW","GREEN","SILVER","GOLD","PURPLE",),
-    engine
-=======
-CREATE TABLE Motorcycles(
->>>>>>> Stashed changes
-=======
-CREATE TABLE Motorcycles(
->>>>>>> Stashed changes
+    engine VARCHAR(50) NOT NULL,
+    year_  INT NOT NULL,
+    daily_rate 
+    status_
+    deposit_fee
+    contact
+
 
 )
 
