@@ -5,24 +5,33 @@ COLLATE utf8mb4_general_ci;
 USE Carrental;
 
 CREATE TABLE Cars(
-    car_id INT AUTO_INCREMENT PRIMARY KEY, -- Egyedi azonosító az autókhoz
-
-);
+    car_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, --egyedi azonosító
+    license_plate CHAR(6) not NULL, --rendszám
+    brand VARCHAR(50) NOT NULL, --márka
+    model VARCHAR(50) NOT NULL, --típus
+    cw ENUM("RED","BLUE","WHITE","BLACK","GRAY","YELLOW","GREEN","SILVER","GOLD","PURPLE",), --szín
+    engine VARCHAR(50) NOT NULL, --motor típus
+    year_  INT NOT NULL, --gyártási év
+    daily_rate DECIMAL(10,2) NOT NULL, --napi bérleti díj
+    status_ ENUM("avalaible", "rented", "maintenance") NOT NULL, --állapot elérhető, foglalt stb
+    deposit_fee DECIMAL(10.2), --foglaló értéke
+    contact VARCHAR NOT NULL(50), --elérhetőség
+    type_ ENUM("enduro", "utcai","sport", "supermoto", "enduro","chopper","tour",) --autó típus
+)
 
 CREATE TABLE motorcycles(
-    bike_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    license_plate CHAR(6) not NULL,
-    brand VARCHAR(50) NOT NULL,
-    model VARCHAR(50) NOT NULL,
-    cw ENUM("RED","BLUE","WHITE","BLACK","GRAY","YELLOW","GREEN","SILVER","GOLD","PURPLE",),
-    engine VARCHAR(50) NOT NULL,
-    year_  INT NOT NULL,
-    daily_rate 
-    status_
-    deposit_fee
-    contact
-
-
+    bike_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, --egyedi azonosító
+    license_plate CHAR(6) not NULL, --rendszám
+    brand VARCHAR(50) NOT NULL,  --márka
+    model VARCHAR(50) NOT NULL,--típus
+    cw ENUM("RED","BLUE","WHITE","BLACK","GRAY","YELLOW","GREEN","SILVER","GOLD","PURPLE",),--szín
+    engine VARCHAR(50) NOT NULL,--motor típus
+    year_  INT NOT NULL, --gyártási év
+    daily_rate DECIMAL(10,2) NOT NULL, --napi bérleti díj
+    status_ ENUM("avalaible", "rented", "maintenance") NOT NULL, --állapot elérhető, foglalt stb
+    deposit_fee DECIMAL(10.2), --foglaló értéke
+    contact VARCHAR NOT NULL(50), --elérhetőség
+    type_ ENUM("enduro", "utcai","sport", "supermoto", "enduro","chopper","tour",) --motor típus
 )
 
 CREATE TABLE Customers (
