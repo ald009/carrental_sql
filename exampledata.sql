@@ -26,3 +26,5 @@ INSERT INTO Payments (rental_id, payment_date, amount, method) VALUES
 (5, '2025-09-18', 28000.00, 'transfer'), -- Armand fizetése
 (6, '2025-09-22', 52000.00, 'cash'); -- Renátó fizetése
 
+INSERT INTO Cars (license_plate, brand, model, cw, engine, year_, daily_rate, status_, deposit_fee, contact, type_) VALUES
+('','','','','','','','','','',''),
