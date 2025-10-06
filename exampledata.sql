@@ -27,12 +27,10 @@ INSERT INTO Payments (rental_id, payment_date, amount, method) VALUES
 (6, '2025-09-22', 52000.00, 'cash'); -- Renátó fizetése
 
 INSERT INTO Cars (vehicle_id, license_plate, brand, model, cw, engine, year_, daily_rate, status_, deposit_fee, contact, type_) VALUES
-('1','ABC123','','','','','','','','','',''),
-('2','XYZ789','','','','','','','','','',''),
-('5','JKL456','','','','','','','','','',''),
-('4','QWE234','','','','','','','','','',''),
-('7','RTY567','','','','','','','','','',''),
-('11','UIO890','','','','','','','','','',''),
+('1','ABC123','Toyota','Corolla','RED','1.6 Petrol','2018',3500.00,'available',20000.00,'06304569482','sedan'),
+('XYZ789','Ford','Focus','BLUE','1.5 Diesel','2019',38.50,'rented',22000.00,'Jane Smith','family'),
+('QWE456','BMW','X3','BLACK','2.0 Diesel','2021',60.00,'maintenance',50000.00,'Mike Johnson','SUV');
+
 
 INSERT INTO Motorcycles (vehicle_id, license_plate, brand, model, cw, engine, year_, daily_rate, status_, deposit_fee, contact, type_) VALUES
 ('3','PAS345','HONDA','CBR','BLUE','1000CCM','2013','20000.00','available','10000.00','06201237889','sport'),

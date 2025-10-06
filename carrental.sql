@@ -59,7 +59,7 @@ CREATE TABLE Rentals (
 CREATE TABLE Payments (
     payment_id INT PRIMARY KEY AUTO_INCREMENT, -- Egyedi azonosító a fizetéshez
     rental_id INT NOT NULL, -- Hivatkozás a kölcsönzésre
-    payment_date DATE NOT NULL, -- Fizetés dátuma
+    payment_date DATE NOT NULL, -- Fizetés +
     amount DECIMAL(10,2) NOT NULL, -- Befizetett összeg
     method ENUM('cash', 'card', 'transfer') NOT NULL, -- Fizetési mód
     FOREIGN KEY (rental_id) REFERENCES Rentals(rental_id) -- elkéri az id t az rental táblából
